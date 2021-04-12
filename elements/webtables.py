@@ -39,5 +39,6 @@ time.sleep(1)
 
 driver.find_element_by_xpath("//button[normalize-space()='Submit']").click()
 time.sleep(3)
+#close browser
 driver.quit()
 print("webtables section is completed")
