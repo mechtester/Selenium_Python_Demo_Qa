@@ -130,4 +130,3 @@ submit.click()
 time.sleep(5)
 driver.quit()
 
-print("practice section finished")
