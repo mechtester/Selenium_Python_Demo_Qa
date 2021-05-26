@@ -66,3 +66,5 @@ promot.accept()
 time.sleep(4)
 
 driver.quit()
+
+print("alert section finished")
