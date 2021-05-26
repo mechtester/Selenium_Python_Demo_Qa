@@ -60,3 +60,4 @@ time.sleep(2)
 time.sleep(4)
 driver.quit()
 
+print("link section finished")
