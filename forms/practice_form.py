@@ -11,6 +11,7 @@ import time
 driver=webdriver.Edge(executable_path="C:\\Browser driver\\msedgedriver.exe")
 
 #Linux Web driver
+#LInux path will update
 
 
 
