@@ -6,9 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-# web drivers
+# windows web drivers
 # driver=webdriver.Chrome(executable_path="C:\\Browser driver\\chromedriver.exe")
 driver=webdriver.Edge(executable_path="C:\\Browser driver\\msedgedriver.exe")
+
+#Linux Web driver
+
+
 
 url="https://demoqa.com/automation-practice-form"
 
