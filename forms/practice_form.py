@@ -8,10 +8,15 @@ import time
 
 # windows web drivers
 # driver=webdriver.Chrome(executable_path="C:\\Browser driver\\chromedriver.exe")
-driver=webdriver.Edge(executable_path="C:\\Browser driver\\msedgedriver.exe")
+# driver=webdriver.Edge(executable_path="C:\\Browser driver\\msedgedriver.exe")
 
 #Linux Web driver
 #LInux path will update
+#chrome web driver
+# driver=webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+#Fire fox web driver
+driver=webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
+
 
 
 
