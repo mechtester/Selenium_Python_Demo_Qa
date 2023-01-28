@@ -5,7 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait as wait
 
 "fire fox driver"
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+# driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+driver=webdriver.Edge(executable_path="/usr/local/bin/msedgedriver")
 
 url="https://demoqa.com/checkbox"
 driver.get(url)

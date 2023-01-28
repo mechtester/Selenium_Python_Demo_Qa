@@ -3,7 +3,7 @@ import time
 "fire fox driver"
 driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
 
-url="https://demoqa.com/"
+url="https://demoqa.com/text-box"
 
 fullname="V.VIGNESHKUMAR"
 email="kumarandroid@protonmail.com"
