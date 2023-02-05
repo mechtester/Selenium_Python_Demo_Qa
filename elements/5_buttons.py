@@ -1,10 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-
+from selenium.webdriver.chrome.service import  Service
 import time
+from selenium.webdriver.common.by import By
 
-"firefox driver"
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+"Chrome driver"
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/buttons"
 driver.get(url)
@@ -14,11 +16,11 @@ driver.execute_script("window.scrollBy(0,200)","")
 time.sleep(2)
 
 #double click path
-double_click=driver.find_element_by_xpath("//button[normalize-space()='Double Click Me']")
+double_click=driver.find_element(By.XPATH,"//button[normalize-space()='Double Click Me']")
 #right click
-right_click=driver.find_element_by_xpath("//button[normalize-space()='Right Click Me']")
+right_click=driver.find_element(By.XPATH,"//button[normalize-space()='Right Click Me']")
 #click_me
-click_me=driver.find_element_by_xpath("//button[normalize-space()='Click Me']")
+click_me=driver.find_element(By.XPATH,"//button[normalize-space()='Click Me']")
 
 #create action chanin object
 action=ActionChains(driver)
@@ -36,7 +38,13 @@ action.click(on_element=click_me)
 action.perform()
 
 time.sleep(4)
+
+a=driver.find_element(By.XPATH,"//p[@id='doubleClickMessage']").text
+b=driver.find_element(By.XPATH,"//p[@id='rightClickMessage']").text
+c=driver.find_element(By.XPATH,"//p[@id='dynamicClickMessage']").text
+print(a)
+print(b)
+print(c)
 #driver quite command
 driver.quit()
-
 print("button section finished")

@@ -1,18 +1,16 @@
 from selenium import webdriver
 import time
-#Fire fox driver
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+from selenium.webdriver.chrome.service import  Service
 
-#Edge Driver
-# driver=webdriver.Edge(executable_path="/usr/local/bin/msedgedriver")
+#### Linux Driver
+# browser=Service(executable_path="/usr/local/bin/chromedriver")
+# driver=webdriver.Chrome(service=browser)
 
-#Chrome Driver
-# options= webdriver.ChromeOptions()
-# options.binary_location="/usr/bin/google-chrome"
-# chrome_driver_binary="/usr/local/bin/chromedriver"
-# driver=webdriver.Chrome(chrome_driver_binary,chrome_options=options)
-# driver=webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
+# browser=Service(executable_path="/usr/local/bin/geckodriver")
+# driver=webdriver.Firefox(service=browser)
 
+browser=Service(executable_path="/usr/local/bin/msedgedriver")
+driver=webdriver.Edge(service=browser)
 
 url="https://demoqa.com/checkbox"
 driver.get(url)

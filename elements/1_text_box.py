@@ -1,7 +1,11 @@
 from selenium import webdriver
 import time
-"fire fox driver"
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import  Service
+
+"Chrome driver"
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/text-box"
 
@@ -13,26 +17,27 @@ permenant_address="INDIA"
 driver.get(url)
 driver.maximize_window()
 time.sleep(3)
-#ELEMENTS
-driver.find_element_by_xpath("//*[name()='path' and contains(@d,'M16 132h41')]").click()
-#text box
-driver.find_element_by_xpath("//span[normalize-space()='Text Box']").click()
+driver.implicitly_wait(10)
+
 #fullname
-driver.find_element_by_xpath("//input[@id='userName']").send_keys(fullname)
-time.sleep(2)
+a=driver.find_element(By.XPATH,"//input[@id='userName']").send_keys(fullname)
+
 #email
-driver.find_element_by_xpath("//input[@id='userEmail']").send_keys(email)
-time.sleep(2)
+driver.find_element(By.XPATH,"//input[@id='userEmail']").send_keys(email)
 #current address
-driver.find_element_by_xpath("//textarea[@id='currentAddress']").send_keys(current_address)
-time.sleep(2)
+driver.find_element(By.XPATH,"//textarea[@id='currentAddress']").send_keys(current_address)
 #permanaet address
-driver.find_element_by_xpath("//textarea[@id='permanentAddress']").send_keys(permenant_address)
-time.sleep(2)
+driver.find_element(By.XPATH,"//textarea[@id='permanentAddress']").send_keys(permenant_address)
+
 #scroll to submit button using length method of web page
 driver.execute_script("window.scrollBy(0,500)","")
-time.sleep(2)
-#submit
-driver.find_element_by_xpath("//button[normalize-space()='Submit']").click()
-print("TEXT BOX SECTION FINISHED")
 
+#submit
+driver.find_element(By.XPATH,"//button[normalize-space()='Submit']").click()
+
+# q=driver.find_element(By.CSS_SELECTOR,".border.col-md-12.col-sm-12").text
+q=driver.find_element(By.XPATH,"//div[@class='border col-md-12 col-sm-12']").text
+
+print("Text Box Printed Text:\n",q)
+
+driver.quit()
