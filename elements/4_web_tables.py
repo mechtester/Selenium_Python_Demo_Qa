@@ -47,10 +47,5 @@ time.sleep(3)
 a=driver.find_element(By.XPATH, "//div[@class='rt-tbody']").text
 print(a)
 
-
-
-
-
-
 driver.quit()
 print("webtables section is completed")
