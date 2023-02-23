@@ -19,7 +19,7 @@ for row in range(2, sheet.max_row + 1):
     pwd = sheet.cell(row=row, column=2).value
 
 
- # Navigate to the URL and enter the username and password
+# Navigate to the URL and enter the username and password
     driver.get('https://www.saucedemo.com/')
     time.sleep(3)
     user_1=driver.find_element(By.XPATH,"//input[@id='user-name']")
