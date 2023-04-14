@@ -89,24 +89,25 @@ music=driver.find_element(By.XPATH,"//label[normalize-space()='Music']")
 music.click()
 time.sleep(2)
 
-# #upload picture
-# upload_path="/home/vigneshkumar/Pictures/valuvan.jpg"
-# upload=driver.find_element(By.XPATH,"//input[@id='uploadPicture']")
-# upload.send_keys(upload_path)
-# time.sleep(3)
+#upload picture
+upload_path=input("Enter Upload File Path:")
+upload=driver.find_element(By.XPATH,"//input[@id='uploadPicture']")
+upload.send_keys(upload_path)
+time.sleep(3)
 
 "scrolling for specific location"
 driver.execute_script("window.scrollBy(200,250)","")
-# #enter address
-# current_address=driver.find_element(By.XPATH,"//textarea[@id='currentAddress']")
-# current_address.click()
-# current_address.send_keys(full_address)
-# time.sleep(3)
+#enter address
+current_address=driver.find_element(By.XPATH,"//textarea[@id='currentAddress']")
+current_address.click()
+current_address.send_keys(full_address)
+time.sleep(3)
 
 "scrolling for specific location"
 driver.execute_script("window.scrollBy(250,350)","")
-driver.execute_script("document.body.style.zoom='75%'")
+driver.execute_script("document.body.style.zoom='60%'")
 time.sleep(5)
+
 #select state
 # wait for the state element to be clickable
 # state = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Select State')]")))
@@ -128,9 +129,9 @@ time.sleep(2)
 # citys=driver.find_element(By.XPATH,"//div[contains(text(),'Jaipur')]")
 # citys.click()
 # time.sleep(3)
-#
+
 # #submit button
-# submit=driver.find_element(By.XPATH,"//button[normalize-space()='Submit']")
+# submit=driver.find_element(By.XPATH,"//button[@id='submit']")
 # submit.click()
 
 time.sleep(5)

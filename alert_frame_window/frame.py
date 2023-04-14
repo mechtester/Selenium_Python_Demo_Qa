@@ -1,19 +1,24 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.chrome.service import Service
 
-"firefox driver"
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+# Create a new Service object
+service = Service("/usr/local/bin/chromedriver")
+
+# Pass the Service object to the Chrome driver
+driver = webdriver.Chrome(service=service)
 
 url="https://demoqa.com/frames"
 driver.get(url)
 time.sleep(2)
 
 #get the list of iframe in the web page using tag names
-frame=driver.find_elements_by_tag_name("iframe")
+frame=driver.find_elements(By.TAG_NAME,"iframe")
 print("No of frames in this web page: ", len(frame))
 
 #switch between iframe using real xpath
-iframe_big=driver.find_element_by_xpath("//iframe[@id='frame1']")
+iframe_big=driver.find_element(By.XPATH,"//iframe[@id='frame1']")
 driver.switch_to.frame(iframe_big)
 time.sleep(3)
 
@@ -23,7 +28,7 @@ driver.switch_to.default_content()
 driver.execute_script("window.scrollBy(100,500)","")
 time.sleep(2)
 
-iframe_small=driver.find_element_by_xpath("//iframe[@id='frame2']")
+iframe_small=driver.find_element(By.XPATH,"//iframe[@id='frame2']")
 driver.switch_to.frame(iframe_small)
 
 driver.quit()

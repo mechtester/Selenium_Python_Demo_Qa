@@ -1,6 +1,9 @@
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import  Service
 import time
 
 "fire fox driver"
@@ -13,7 +16,7 @@ driver.maximize_window()
 time.sleep(3)
 
 #1alert pop up
-alert=driver.find_element_by_xpath("//button[@id='alertButton']")
+alert=driver.find_element(By.XPATH,"//button[@id='alertButton']")
 alert.click()
 time.sleep(3)
 
@@ -28,7 +31,7 @@ alert_box.accept()
 
 
 #2late_alert winodw
-late_alert=driver.find_element_by_xpath("//button[@id='timerAlertButton']")
+late_alert=driver.find_element(By.XPATH,"//button[@id='timerAlertButton']")
 late_alert.click()
 
 #explict wait
@@ -43,7 +46,7 @@ print("late alert shows following message: "+late_message)
 time.sleep(4)
 
 #3confirm box
-confirm_box=driver.find_element_by_xpath("//button[@id='confirmButton']")
+confirm_box=driver.find_element(By.XPATH,"//button[@id='confirmButton']")
 confirm_box.click()
 
 #switch to confirm box
@@ -54,7 +57,7 @@ print("confirm box shows following message: "+message)
 confirm.accept()
 
 #4promot box
-promot_box=driver.find_element_by_xpath("//button[@id='promtButton']")
+promot_box=driver.find_element(By.XPATH,"//button[@id='promtButton']")
 promot_box.click()
 #switch to promot box
 promot=driver.switch_to.alert
