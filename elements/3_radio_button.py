@@ -14,7 +14,8 @@ driver.get(url)
 driver.find_element(By.XPATH,"//label[normalize-space()='Yes']").click()
 Ye=driver.find_element(By.XPATH,"//span[@class='text-success']").text
 print("You have selected:",Ye)
-
+time.sleep(3)
 driver.find_element(By.XPATH,"//label[normalize-space()='Impressive']").click()
 Yew=driver.find_element(By.XPATH,"//span[@class='text-success']").text
 print("You have selected:",Yew)
+time.sleep(3)
