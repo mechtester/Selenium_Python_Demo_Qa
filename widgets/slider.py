@@ -19,6 +19,9 @@ driver.maximize_window()
 slider = driver.find_element(By.XPATH,"//input[@type='range']")
 
 move = ActionChains(driver)
-move.click_and_hold(slider).move_by_offset(10, 0).release().perform()
+move.click_and_hold(slider).move_by_offset(20, 0).release().perform()
+
+slider_value="//input[@id='sliderValue']"
+
 
 time.sleep(3)

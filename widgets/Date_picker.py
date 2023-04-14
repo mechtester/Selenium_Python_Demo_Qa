@@ -14,26 +14,31 @@ driver.get(url)
 time.sleep(3)
 driver.maximize_window()
 
-#click_calender
-driver.find_element(By.XPATH,"//input[@id='datePickerMonthYearInput']").click()
-time.sleep(3)
-a=driver.find_element(By.XPATH,"//input[@id='datePickerMonthYearInput']")
-a.send_keys(Keys.CONTROL + "a")
-a.send_keys(Keys.DELETE)
-a.send_keys("01/11/1990")
-a.send_keys(Keys.ENTER)
-time.sleep(3)
+# #click_calender
+# driver.find_element(By.XPATH,"//input[@id='datePickerMonthYearInput']").click()
+# time.sleep(3)
+# a=driver.find_element(By.XPATH,"//input[@id='datePickerMonthYearInput']")
+# a.send_keys(Keys.CONTROL + "a")
+# a.send_keys(Keys.DELETE)
+# a.send_keys("01/11/1990")
+# a.send_keys(Keys.ENTER)
+# time.sleep(3)
 
 #Date and time calender
 b=driver.find_element(By.XPATH,"//input[@id='dateAndTimePickerInput']")
 b.click()
+
+
 year=driver.find_element(By.XPATH,"//span[@class='react-datepicker__year-read-view--selected-year']")
 year.click()
+time.sleep(3)
 
 up_arrow=driver.find_element(By.XPATH,"//body//div//div[@data-placement='top-start']//div//div//div//div//div//div//div//div[1]")
+time.sleep(3)
 down_arrow=driver.find_element(By.XPATH,"//body//div//div[@data-placement='top-start']//div//div//div//div//div//div//div//div[13]")
-year_want=driver.find_element(By.XPATH,"//div[normalize-space()='1996']")
-
+time.sleep(3)
+year_want=driver.find_element(By.XPATH,"//div[normalize-space()='2022']")
+time.sleep(3)
 
 
 
