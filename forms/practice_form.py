@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.service import  Service
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 "Chrome driver"
@@ -88,43 +89,49 @@ music=driver.find_element(By.XPATH,"//label[normalize-space()='Music']")
 music.click()
 time.sleep(2)
 
-#upload picture
-upload_path="/home/vigneshkumar/Pictures/valuvan.jpg"
-upload=driver.find_element(By.XPATH,"//input[@id='uploadPicture']")
-upload.send_keys(upload_path)
-time.sleep(3)
-
-#enter address
-current_address=driver.find_element(By.XPATH,"//textarea[@id='currentAddress']")
-current_address.click()
-current_address.send_keys(full_address)
-time.sleep(3)
+# #upload picture
+# upload_path="/home/vigneshkumar/Pictures/valuvan.jpg"
+# upload=driver.find_element(By.XPATH,"//input[@id='uploadPicture']")
+# upload.send_keys(upload_path)
+# time.sleep(3)
 
 "scrolling for specific location"
 driver.execute_script("window.scrollBy(200,250)","")
+# #enter address
+# current_address=driver.find_element(By.XPATH,"//textarea[@id='currentAddress']")
+# current_address.click()
+# current_address.send_keys(full_address)
+# time.sleep(3)
 
-
+"scrolling for specific location"
+driver.execute_script("window.scrollBy(250,350)","")
+driver.execute_script("document.body.style.zoom='75%'")
+time.sleep(5)
 #select state
-state=driver.find_element(By.XPATH,"//div[contains(text(),'Select State')]")
-state.click()
+# wait for the state element to be clickable
+# state = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Select State')]")))
+
+# click on the state element
+# state.click()
+
 time.sleep(2)
 
-states=driver.find_element(By.XPATH,"//div[contains(text(),'Rajasthan')]")
-states.click()
-time.sleep(2)
-
-#select city
-city=driver.find_element(By.XPATH,"//div[contains(text(),'Select City')]")
-city.click()
-time.sleep(3)
-
-citys=driver.find_element(By.XPATH,"//div[contains(text(),'Jaipur')]")
-citys.click()
-time.sleep(3)
-
-#submit button
-submit=driver.find_element(By.XPATH,"//button[normalize-space()='Submit']")
-submit.click()
+# states=driver.find_element(By.XPATH,"//div[contains(text(),'Rajasthan')]")
+# states.click()
+# time.sleep(2)
+#
+# #select city
+# city=driver.find_element(By.XPATH,"//div[contains(text(),'Select City')]")
+# city.click()
+# time.sleep(3)
+#
+# citys=driver.find_element(By.XPATH,"//div[contains(text(),'Jaipur')]")
+# citys.click()
+# time.sleep(3)
+#
+# #submit button
+# submit=driver.find_element(By.XPATH,"//button[normalize-space()='Submit']")
+# submit.click()
 
 time.sleep(5)
 driver.quit()
