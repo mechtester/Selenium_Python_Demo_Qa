@@ -6,11 +6,12 @@ from selenium.webdriver.chrome.service import  Service
 "Chrome driver"
 browser=Service(executable_path="/usr/local/bin/chromedriver")
 driver=webdriver.Chrome(service=browser)
+driver.maximize_window()
 
 url="https://demoqa.com/text-box"
 
 fullname="V.VIGNESHKUMAR"
-email="kumarandroid@protonmail.com"
+email="v.vigneshkumar@protonmail.com"
 current_address="1/166 NORTH STREET,"
 permenant_address="INDIA"
 
