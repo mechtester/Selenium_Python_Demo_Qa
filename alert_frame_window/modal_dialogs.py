@@ -6,13 +6,12 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.chrome.service import Service
 
-# Create a new Service object
-service = Service("/usr/local/bin/chromedriver")
-
-# Pass the Service object to the Chrome driver
-driver = webdriver.Chrome(service=service)
+# Chrome Driver
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/modal-dialogs"
+driver.maximize_window()
 driver.get(url)
 
 time.sleep(3)

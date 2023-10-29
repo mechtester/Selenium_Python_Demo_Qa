@@ -4,9 +4,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.service import  Service
+
 "Chrome driver"
 browser=Service(executable_path="/usr/local/bin/chromedriver")
 driver=webdriver.Chrome(service=browser)
+
 url="https://demoqa.com/checkbox"
 driver.get(url)
 driver.maximize_window()
@@ -18,6 +20,7 @@ driver.find_element(By.XPATH,"(//button[@title='Toggle'])[2]").click()
 # time.sleep(2)
 driver.find_element(By.XPATH,"(//button[@title='Toggle'])[3]").click()
 # time.sleep(2)
+
 #scroll to submit button using length method of web page
 driver.execute_script("window.scrollBy(0,500)","")
 

@@ -3,14 +3,13 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.chrome.service import Service
 
-# Create a new Service object
-service = Service("/usr/local/bin/chromedriver")
-
-# Pass the Service object to the Chrome driver
-driver = webdriver.Chrome(service=service)
+# Chrome Driver
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/frames"
 driver.get(url)
+driver.maximize_window()
 time.sleep(2)
 
 #get the list of iframe in the web page using tag names

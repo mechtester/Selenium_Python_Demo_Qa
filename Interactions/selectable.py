@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 ## Chrome Driver
 browser=Service(executable_path="/usr/local/bin/chromedriver")
 driver=webdriver.Chrome(service=browser)
+
 driver.maximize_window()
 url="https://demoqa.com/selectable"
 driver.get(url)

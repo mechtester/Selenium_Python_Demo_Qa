@@ -11,6 +11,7 @@ import time
 "Chrome driver"
 browser=Service(executable_path="/usr/local/bin/chromedriver")
 driver=webdriver.Chrome(service=browser)
+
 url="https://demoqa.com/automation-practice-form"
 driver.get(url)
 driver.maximize_window()
@@ -125,12 +126,12 @@ time.sleep(2)
 # city=driver.find_element(By.XPATH,"//div[contains(text(),'Select City')]")
 # city.click()
 # time.sleep(3)
-#
+# #
 # citys=driver.find_element(By.XPATH,"//div[contains(text(),'Jaipur')]")
 # citys.click()
 # time.sleep(3)
-
-# #submit button
+#
+# # #submit button
 # submit=driver.find_element(By.XPATH,"//button[@id='submit']")
 # submit.click()
 

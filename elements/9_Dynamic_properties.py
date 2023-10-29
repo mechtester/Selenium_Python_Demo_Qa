@@ -9,8 +9,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 
-browser=Service(executable_path="/usr/local/bin/msedgedriver")
-driver=webdriver.Edge(service=browser)
+# Chrome Driver
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/dynamic-properties"
 driver.get(url)

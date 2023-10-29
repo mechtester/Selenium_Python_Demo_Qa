@@ -6,14 +6,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import  Service
 import time
 
-"fire fox driver"
-driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
+
+# Chrome Driver
+browser=Service(executable_path="/usr/local/bin/chromedriver")
+driver=webdriver.Chrome(service=browser)
 
 url="https://demoqa.com/alerts"
 
 driver.get(url)
 driver.maximize_window()
 time.sleep(3)
+
+#####SCROLLING FOR SPECIFIC FUNCTION#########
+driver.execute_script("window.scroll(0,100)","")
 
 #1alert pop up
 alert=driver.find_element(By.XPATH,"//button[@id='alertButton']")
